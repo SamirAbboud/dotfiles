@@ -1,0 +1,248 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+themes=(
+    tokyodark
+    tokyonight
+    catppuccin
+    gruvbox
+    everforest
+    nord
+    onedark
+)
+
+declare -A GTK_ROOT=(
+    [tokyodark]="$HOME/.themes/Tokyodark"
+    [tokyonight]="$HOME/.themes/Tokyonight"
+    [catppuccin]="$HOME/.themes/Catppuccin"
+    [gruvbox]="$HOME/.themes/Gruvbox"
+    [everforest]="$HOME/.themes/Everforest"
+    [nord]="$HOME/.themes/Nord"
+    [onedark]="$HOME/.themes/OneDark"
+)
+
+declare -A ICON_THEME=(
+    [tokyodark]="Tela-blue-dark"
+    [tokyonight]="Tela-blue-dark"
+    [catppuccin]="Tela-dracula-dark"
+    [gruvbox]="Tela-ubuntu-dark"
+    [everforest]="Tela-manjaro-dark"
+    [nord]="Tela-nord-dark"
+    [onedark]="Tela-dark"
+)
+
+declare -A VSCODE_THEME=(
+    [tokyodark]="Tokyo Night Dark Enhanced"
+    [tokyonight]="Tokyo Night Storm"
+    [catppuccin]="Catppuccin Mocha"
+    [gruvbox]="Gruvbox Dark Hard"
+    [everforest]="Everforest Night Hard"
+    [nord]="Nord"
+    [onedark]="One Dark Pro Darker"
+)
+
+STATE_DIR="$HOME/.local/state/nvim"
+THEME_FILE="$STATE_DIR/theme"
+
+CONFIG="$HOME/.config"
+
+STARSHIP_DIR="$CONFIG/starship"
+FISH_DIR="$CONFIG/fish"
+KITTY_DIR="$CONFIG/kitty"
+GTK2_DIR="$CONFIG/gtk-2.0"
+GTK3_DIR="$CONFIG/gtk-3.0"
+GTK4_DIR="$CONFIG/gtk-4.0"
+XSETTINGSD_DIR="$CONFIG/xsettingsd"
+VSCODIUM_DIR="$CONFIG/VSCodium/User"
+WAYBAR_DIR="$CONFIG/waybar"
+SWAYNC_DIR="$CONFIG/swaync"
+ROFI_DIR="$CONFIG/rofi"
+NWG_DOCK_DIR="$CONFIG/nwg-dock-hyprland"
+
+
+notify() {
+    command -v notify-send >/dev/null || return
+
+    notify-send \
+        --icon=preferences-desktop-theme \
+        --app-name="Theme Switcher" \
+        "Theme Changed" \
+        "Current theme: $1"
+}
+
+contains() {
+    local value="$1"
+
+    for t in "${themes[@]}"; do
+        [[ "$t" == "$value" ]] && return 0
+    done
+
+    return 1
+}
+
+current_theme() {
+    if [[ -f "$THEME_FILE" ]]; then
+        cat "$THEME_FILE"
+    else
+        echo "${themes[0]}"
+    fi
+}
+
+next_theme() {
+    local current
+    current=$(current_theme)
+
+    for i in "${!themes[@]}"; do
+        if [[ "${themes[i]}" == "$current" ]]; then
+            echo "${themes[$(((i + 1) % ${#themes[@]}))]}"
+            return
+        fi
+    done
+
+    echo "${themes[0]}"
+}
+
+if [[ $# -eq 0 ]]; then
+    theme=$(next_theme)
+else
+    theme="$1"
+
+    if ! contains "$theme"; then
+        echo "Unknown theme: $theme"
+        echo
+        echo "Available themes:"
+        printf '  %s\n' "${themes[@]}"
+        echo
+        exit 1
+    fi
+fi
+
+mkdir -p "$STATE_DIR"
+
+# 1. Save Neovim theme
+printf "%s\n" "$theme" > "$THEME_FILE"
+
+# 2. Kitty
+ln -sfn "$KITTY_DIR/themes/$theme.conf" \
+         "$KITTY_DIR/theme.conf"
+
+# Reload all running Kitty windows
+if command -v kitty >/dev/null; then
+    kitty @ load-config >/dev/null 2>&1 || true
+fi
+
+# 3. Fish
+ln -sfn "$FISH_DIR/themes/$theme.fish" \
+         "$FISH_DIR/conf.d/theme.fish"
+
+# 4. Starship
+ln -sfn "$STARSHIP_DIR/themes/$theme.toml" \
+         "$STARSHIP_DIR/config.toml"
+
+# 5. GTK 2
+cp \
+    "$GTK2_DIR/themes/$theme" \
+    "$HOME/.gtkrc-2.0"
+
+# 6. GTK 3
+ln -sfn "$GTK3_DIR/themes/$theme.ini" \
+         "$GTK3_DIR/settings.ini"
+
+# 7. GTK 4
+ln -sfn "$GTK4_DIR/themes/$theme.ini" \
+         "$GTK4_DIR/settings.ini"
+
+root="${GTK_ROOT[$theme]}"
+if [[ ! -d "$root" ]]; then
+    echo "GTK theme not found: $root"
+    exit 1
+fi
+
+ln -sfn "$root/gtk-4.0/gtk.css" "$GTK4_DIR/gtk.css"
+ln -sfn "$root/gtk-4.0/gtk-dark.css" "$GTK4_DIR/gtk-dark.css"
+
+# Remove any previous assets symlink
+[[ -L "$CONFIG/assets" ]] && rm "$CONFIG/assets"
+[[ -L "$GTK4_DIR/assets" ]] && rm "$GTK4_DIR/assets"
+
+if [[ -d "$root/assets" ]]; then
+    ln -sfn \
+        "$root/assets" \
+        "$CONFIG/assets"
+
+elif [[ -d "$root/gtk-4.0/assets" ]]; then
+    ln -sfn \
+        "$root/gtk-4.0/assets" \
+        "$GTK4_DIR/assets"
+fi
+
+# 8. xsettingsd
+ln -sfn "$XSETTINGSD_DIR/themes/$theme.conf" \
+         "$XSETTINGSD_DIR/xsettingsd.conf"
+
+
+# 9. Apply theme
+gsettings set \
+    org.gnome.desktop.interface \
+    gtk-theme \
+    "$(basename "$root")"
+
+gsettings set \
+    org.gnome.desktop.interface \
+    icon-theme \
+    "${ICON_THEME[$theme]}"
+
+# Reset Flatpak theme overrides
+if command -v flatpak >/dev/null; then
+    flatpak override --user --reset
+fi
+
+# 10. VSCodium
+if command -v codium >/dev/null && command -v jq >/dev/null; then
+    tmp=$(mktemp)
+
+    jq \
+        --arg theme "${VSCODE_THEME[$theme]}" \
+        '.["workbench.colorTheme"] = $theme' \
+        "$VSCODIUM_DIR/settings.json" > "$tmp"
+
+    mv "$tmp" "$VSCODIUM_DIR/settings.json"
+fi
+
+# 11. Waybar
+ln -sfn \
+    "$WAYBAR_DIR/themes/$theme.css" \
+    "$WAYBAR_DIR/colors.css"
+
+pkill waybar 2>/dev/null || true
+waybar >/dev/null 2>&1 &
+
+
+# 12. SwayNC
+ln -sfn \
+    "$SWAYNC_DIR/themes/$theme.css" \
+    "$SWAYNC_DIR/colors.css"
+
+pkill swaync 2>/dev/null || true
+swaync >/dev/null 2>&1 &
+
+
+# 13. Rofi
+ln -sfn \
+    "$ROFI_DIR/themes/colors/$theme.rasi" \
+    "$ROFI_DIR/themes/colors/colors.rasi"
+
+
+# 14. nwg-dock-hyprland
+ln -sfn \
+    "$NWG_DOCK_DIR/themes/$theme.css" \
+    "$NWG_DOCK_DIR/colors.css"
+
+killall nwg-dock-hyprland 2>/dev/null || true
+
+nwg-dock-hyprland \
+    -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38 >/dev/null 2>&1 &
+
+
+notify "$theme"

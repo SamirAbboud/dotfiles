@@ -1,0 +1,18 @@
+#!/bin/bash
+
+selection="$(
+    cliphist list \
+        | rofi -theme ~/.config/rofi/themes/clipboard.rasi \
+            -dmenu -sync -display-columns 2
+)"
+
+[ -z "$selection" ] && exit 0
+
+printf '%s\n' "$selection" \
+    | cliphist decode \
+    | wl-copy
+
+
+sleep 0.1 # Increase to 0.2 if focus returns slowly
+
+wtype -M ctrl v -m ctrl

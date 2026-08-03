@@ -1,0 +1,18 @@
+# VS Code / VSCodium
+/.vscode/
+
+# JetBrains IDEs
+/.idea/
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Logs
+*.log
+
+# macOS
+.DS_Store

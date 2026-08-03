@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Ensure the Hyprland backend is running.
+systemctl --user start xdg-desktop-portal-hyprland.service >/dev/null 2>&1
+
+# If the frontend isn't already running, start it manually.
+if ! pgrep -f "^/usr/libexec/xdg-desktop-portal$" >/dev/null; then
+    /usr/libexec/xdg-desktop-portal >/dev/null 2>&1 &
+fi

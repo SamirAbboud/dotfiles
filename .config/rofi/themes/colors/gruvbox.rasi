@@ -1,0 +1,15 @@
+* {
+    background:     #282828E5;
+    background-alt: #2D2B29FF;
+    background-sec: #928374FF;
+
+    foreground:     #EBDBB2FF;
+    selected:       #EBDBB2FF;
+
+    primary:        rgba(250, 189, 47, 0.9);
+
+    active:         #8EC07CFF;
+    urgent:         #FB4934FF;
+
+    highlight:      rgba(250, 189, 47, 0.16);
+}

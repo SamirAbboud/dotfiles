@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if ~/.local/bin/caffeine --is-running | grep -q true; then
+    notify-send -a caffeine -i my-caffeine-on-symbolic \
+        "Caffeine" "Enabled (sleep is prevented)"
+else
+    notify-send -a caffeine -i my-caffeine-off-symbolic \
+        "Caffeine" "Disabled (sleep is allowed)"
+fi

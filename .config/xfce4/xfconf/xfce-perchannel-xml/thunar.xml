@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="thunar" version="1.0">
+  <property name="last-view" type="string" value="ThunarIconView"/>
+  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_100_PERCENT"/>
+  <property name="last-show-hidden" type="bool" value="true"/>
+  <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_SHORTCUTS"/>
+  <property name="last-image-preview-visible" type="bool" value="false"/>
+  <property name="last-menubar-visible" type="bool" value="false"/>
+  <property name="last-toolbar-items" type="string" value="menu:1,open-parent:1,back:1,forward:1,search:1,location-bar:1,open-home:0,new-tab:0,new-window:0,undo:1,redo:1,zoom-out:0,zoom-in:0,zoom-reset:0,view-as-compact-list:1,view-as-icons:1,view-as-detailed-list:1,toggle-split-view:1,view-switcher:0,reload:0,uca-action-1720621850636761-1:0,uca-action-1735781946752596-1:0,uca-action-1721171915130704-1:0,uca-action-1730572291852956-2:0,uca-action-1758831930937907-1:0,uca-action-1765940212176490-1:0,uca-action-1777649251663823-2:0,uca-action-1777649285826995-3:0,uca-action-1777649312323907-4:0"/>
+  <property name="misc-highlighting-enabled" type="bool" value="true"/>
+  <property name="last-statusbar-visible" type="bool" value="true"/>
+  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
+  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>
+  <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
+  <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
+  <property name="misc-single-click" type="bool" value="false"/>
+</channel>

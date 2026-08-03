@@ -1,0 +1,16 @@
+#!/bin/bash
+
+selection="$(
+    cat $HOME/.config/rofi/bin/emojis.txt \
+    | rofi -dmenu -theme ~/.config/rofi/themes/clipboard.rasi
+)"
+
+[ -z "$selection" ] && exit 0
+
+printf '%s' "$selection" \
+    | awk '{printf "%s", $1}' \
+    | wl-copy
+
+sleep 0.1
+
+wtype -M ctrl v -m ctrl

@@ -1,0 +1,220 @@
+# =============================================================================
+# Dotfiles Requirements
+# =============================================================================
+#
+# This file lists all packages, tools and runtimes required by the dotfiles.
+#
+# Install these dependencies before running `install.sh`.
+#
+# The installer configures applications, themes and user settings, but it does
+# not install every required dependency automatically.
+#
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Package Manager
+# -----------------------------------------------------------------------------
+#
+# Official Arch Linux repositories
+#
+    sudo pacman -S <package>
+
+# Arch User Repository (AUR)
+#
+    yay -S <package>
+
+# -----------------------------------------------------------------------------
+# Core Desktop
+# -----------------------------------------------------------------------------
+#
+# Wayland Compositor
+    sudo pacman -S hyprland
+
+# Session Management
+    sudo pacman -S hypridle hyprlock
+
+# Desktop Components
+    sudo pacman -S waybar swaynotificationcenter rofi-wayland nwg-dock-hyprland
+
+# Wallpaper
+    sudo pacman -S awww
+
+# Clipboard Integration
+    sudo pacman -S wl-clipboard wl-clip-persist cliphist wtype
+
+# Power Management
+    sudo pacman -S power-profiles-daemon
+
+# -----------------------------------------------------------------------------
+# GTK / Themes
+# -----------------------------------------------------------------------------
+#
+# Theme Build Tools
+    sudo pacman -S git sassc
+
+# -----------------------------------------------------------------------------
+# Applications
+# -----------------------------------------------------------------------------
+#
+# Terminal Environment
+    sudo pacman -S fish kitty starship
+
+# Text Editor
+    sudo pacman -S neovim
+
+# Media Player
+    sudo pacman -S mpv
+
+# -----------------------------------------------------------------------------
+# VSCodium
+# -----------------------------------------------------------------------------
+#
+# Editor
+    yay -S vscodium-bin
+
+# JSON Processing
+    sudo pacman -S jq
+
+# -----------------------------------------------------------------------------
+# Thunar
+# -----------------------------------------------------------------------------
+#
+# File Manager
+    sudo pacman -S thunar
+
+# Plugins
+    sudo pacman -S thunar-archive-plugin thunar-volman
+
+# Thumbnail Support
+    sudo pacman -S tumbler ffmpegthumbnailer
+
+# -----------------------------------------------------------------------------
+# Desktop Utilities
+# -----------------------------------------------------------------------------
+#
+# Screenshots
+    sudo pacman -S flameshot
+
+# Bluetooth & Network
+    sudo pacman -S blueman nm-connection-editor
+
+# System Monitoring
+    sudo pacman -S mission-center htop btop nvtop powertop
+
+# Theme Configuration
+    sudo pacman -S nwg-look kvantum qt6ct
+
+# Desktop Integration
+    sudo pacman -S xdg-desktop-portal xdg-desktop-portal-hyprland
+
+# -----------------------------------------------------------------------------
+# CLI Utilities
+# -----------------------------------------------------------------------------
+#
+# Install commonly used command-line utilities.
+#
+# Modern Command-Line Tools
+    sudo pacman -S eza zoxide fzf bat
+
+# Disk Usage
+    sudo pacman -S duf dust
+
+# File Utilities
+    sudo pacman -S tree jq unzip unrar
+
+# Media Tools
+    sudo pacman -S ffmpeg yt-dlp
+
+# -----------------------------------------------------------------------------
+# System Utilities
+# -----------------------------------------------------------------------------
+#
+# Install essential system utilities.
+#
+# Brightness Control
+    sudo pacman -S brightnessctl
+
+# Network Management (nmtui)
+    sudo pacman -S networkmanager
+
+# -----------------------------------------------------------------------------
+# Development Tools (Optional)
+# -----------------------------------------------------------------------------
+#
+# These tools are not required by the installer itself, but they are
+# recommended for software development.
+#
+
+# C / C++
+#
+# Install the GNU and LLVM toolchains.
+#
+    sudo pacman -S gcc clang make cmake
+
+# Rust
+#
+# Install Rust using the official rustup installer.
+#
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Go
+#
+# Install the Go toolchain.
+#
+    sudo pacman -S go
+
+# Node.js (Fast Node Manager)
+#
+# Install fnm from the official repositories.
+#
+    sudo pacman -S fnm
+#
+# Install the latest LTS version of Node.js.
+#
+    fnm install --lts
+    fnm default lts-latest
+
+# PHP / Composer
+#
+# Install PHP and PHP-FPM.
+#
+    sudo pacman -S php php-fpm
+#
+# Enable the PHP-FPM service (optional).
+#
+    sudo systemctl enable --now php-fpm
+#
+# Install Composer.
+#
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php composer-setup.php
+    sudo mv composer.phar /usr/local/bin/composer
+    rm composer-setup.php
+
+# Tree-sitter CLI
+#
+# Install the Tree-sitter command-line interface.
+#
+    sudo pacman -S tree-sitter
+
+# -----------------------------------------------------------------------------
+# Installation
+# -----------------------------------------------------------------------------
+#
+# After installing the required packages:
+#
+# 1. Clone the dotfiles repository.
+#
+#       git clone <repository-url>
+#
+# 2. Enter the repository.
+#
+#       cd dotfiles
+#
+# 3. Run the installer.
+#
+#       ./install.sh
+#
+# 4. Log out and log back in to apply all desktop changes.
+#
+# -----------------------------------------------------------------------------

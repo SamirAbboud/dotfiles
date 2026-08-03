@@ -1,0 +1,185 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+GET_CURRENT=0
+TOGGLE_QUIET=0
+IS_QUIET=0
+
+PROFILE="next"
+
+
+for arg in "$@"; do
+    case "$arg" in
+        --get) GET_CURRENT=1 ;;
+        --toggle-quiet) TOGGLE_QUIET=1 ;;
+        --is-quiet) IS_QUIET=1 ;;
+        --help|-h)
+            echo "Usage: $0 [--get|--toggle-quiet|--is-quiet] [profile]"
+            echo
+            echo "Profiles:"
+            echo "  powersave"
+            echo "  balanced"
+            echo "  throughput-performance"
+            echo "  next"
+            exit 0
+            ;;
+        *) PROFILE="$arg" ;;
+    esac
+done
+
+case "$PROFILE" in
+    next|powersave|balanced|throughput-performance)
+        ;;
+    *)
+        echo "Unknown profile: $PROFILE"
+        exit 1
+        ;;
+esac
+
+#
+# Backend detection
+#
+
+if command -v powerprofilesctl >/dev/null 2>&1; then
+    readonly BACKEND="powerprofilesctl"
+elif command -v tuned-adm >/dev/null 2>&1; then
+    readonly BACKEND="tuned"
+else
+    echo "Neither powerprofilesctl nor tuned-adm is installed."
+    exit 1
+fi
+
+normalize_profile() {
+    case "$1" in
+        power-saver)
+            echo "powersave"
+            ;;
+        performance)
+            echo "throughput-performance"
+            ;;
+        *)
+            echo "$1"
+            ;;
+    esac
+}
+
+get_current() {
+    local profile
+
+    case "$BACKEND" in
+        powerprofilesctl)
+            profile=$(powerprofilesctl get)
+            profile=$(normalize_profile "$profile")
+            ;;
+        tuned)
+            profile=$(
+                tuned-adm active 2>/dev/null |
+                awk -F': ' '/Current active profile/ {print $2}'
+            )
+            ;;
+    esac
+
+    echo "$profile"
+}
+
+backend_profile() {
+    case "$1" in
+        powersave)
+            echo "power-saver"
+            ;;
+        throughput-performance)
+            echo "performance"
+            ;;
+        *)
+            echo "$1"
+            ;;
+    esac
+}
+
+set_profile() {
+    local profile="$1"
+
+    case "$BACKEND" in
+        powerprofilesctl)
+            profile=$(backend_profile "$profile")
+            powerprofilesctl set "$profile"
+            ;;
+        tuned)
+            sudo tuned-adm profile "$profile" >/dev/null
+            ;;
+    esac
+}
+
+notify() {
+    local profile
+    profile=$(get_current)
+
+    case "$profile" in
+        powersave)
+            ICON="power-profile-power-saver-symbolic"
+            LABEL="Power Saver"
+            ;;
+        balanced)
+            ICON="power-profile-balanced-symbolic"
+            LABEL="Balanced"
+            ;;
+        throughput-performance)
+            ICON="power-profile-performance-symbolic"
+            LABEL="Performance"
+            ;;
+        *)
+            ICON="preferences-system"
+            LABEL="$profile"
+            ;;
+    esac
+
+    notify-send \
+        --icon="$ICON" \
+        --app-name="$(basename "$0")" \
+        "Power Profile Changed" \
+        "$LABEL" \
+        -h "string:x-canonical-private-synchronous:$(basename "$0")"
+}
+
+CURRENT=$(get_current)
+
+if [[ $GET_CURRENT -eq 1 ]]; then
+    echo "$CURRENT"
+    exit 0
+fi
+
+if [[ $IS_QUIET -eq 1 ]]; then
+    [[ "$CURRENT" == "powersave" ]] && echo "true" || echo "false"
+    exit 0
+fi
+
+if [[ $TOGGLE_QUIET -eq 1 ]]; then
+    if [[ "$CURRENT" == "powersave" ]]; then
+        PROFILE="balanced"
+    else
+        PROFILE="powersave"
+    fi
+
+    set_profile "$PROFILE"
+    notify
+    exit 0
+fi
+
+if [[ "$PROFILE" == "next" ]]; then
+    PROFILES=(
+        powersave
+        balanced
+        throughput-performance
+    )
+
+    for i in "${!PROFILES[@]}"; do
+        if [[ "${PROFILES[$i]}" == "$CURRENT" ]]; then
+            PROFILE="${PROFILES[$(( (i + 1) % ${#PROFILES[@]} ))]}"
+            break
+        fi
+    done
+fi
+
+set_profile "$PROFILE"
+notify

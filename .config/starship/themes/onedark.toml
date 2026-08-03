@@ -1,0 +1,57 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = "$os  $username [on](dimmed white) $directory$git_branch$cmd_duration $character"
+
+[username]
+show_always = true
+style_user = "bold #abb2bf"
+style_root = "bold #e86671"
+format = "[$user]($style)"
+
+[os]
+disabled = false
+style = "bold #61afef"
+
+[os.symbols]
+Arch = ""
+Fedora = ""
+Ubuntu = ""
+Debian = ""
+Alpine = ""
+Linux = ""
+Macos = ""
+Windows = ""
+
+[directory]
+style = "bold #61afef"
+home_symbol = "~"
+read_only = "  "
+truncation_length = 2
+truncation_symbol = "../"
+format = "[$path]($style)"
+
+[directory.substitutions]
+"Desktop" = "  "
+"Documents" = "  "
+"Downloads" = "  "
+"Music" = " 󰎈 "
+"Pictures" = "  "
+"Videos" = "  "
+"GitHub" = " 󰊤 "
+
+[git_branch]
+symbol = " "
+style = "bold #c678dd"
+format = " [$symbol$branch]($style)"
+
+[character]
+success_symbol = "[»](bold #56b6c2)"
+error_symbol = "[»](bold #e86671)"
+vicmd_symbol = "[«](bold #e5c07b)"
+
+[cmd_duration]
+min_time = 100
+style = "fg:#5c6370"
+format = " [$duration]($style)"

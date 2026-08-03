@@ -1,0 +1,409 @@
+😀 Grinning Face
+😃 Smiley Face
+😄 Smiling Face
+😁 Beaming Face
+😆 Laughing Face
+😅 Smiling with Sweat
+😂 Face with Tears of Joy
+🤣 Rolling on the Floor Laughing
+😊 Smiling Face with Smiling Eyes
+😇 Smiling Face with Halo
+🙂 Slightly Smiling Face
+🙃 Upside Down Face
+😉 Winking Face
+😌 Relieved Face
+😍 Smiling Face with Heart Eyes
+🥰 Smiling Face with Hearts
+😘 Face Blowing a Kiss
+😗 Kissing Face
+😙 Kissing Face with Smiling Eyes
+😚 Kissing Face with Closed Eyes
+😋 Yummy Face
+😛 Face with Tongue
+😝 Squinting Face with Tongue
+😜 Winking Face with Tongue
+🤪 Crazy Face
+🤨 Face with Raised Eyebrow
+🧐 Face with Monocle
+🤓 Nerd Face
+😎 Smiling Face with Sunglasses
+🤩 Star Struck
+🥳 Party Face
+😏 Smirking Face
+😒 Unamused Face
+😞 Disappointed Face
+😔 Sad Face
+😟 Worried Face
+😕 Confused Face
+🙁 Slightly Sad Face
+☹️ Sad Face
+😣 Persevering Face
+😖 Confounded Face
+😫 Tired Face
+😩 Weary Face
+🥺 Pleading Face
+😢 Crying Face
+😭 Loudly Crying Face
+😤 Angry Face
+😠 Angry Face
+😡 Pouting Face
+🤬 Cursing Face
+😱 Screaming Face
+😨 Fearful Face
+😰 Anxious Face
+😥 Sad but Relieved
+😓 Downcast Face with Sweat
+🤗 Hugging Face
+🤔 Thinking Face
+🤭 Face with Hand Over Mouth
+🤫 Shushing Face
+🤥 Lying Face
+😶 No Mouth
+😐 Neutral Face
+😑 Expressionless Face
+🙄 Rolling Eyes
+😬 Grimacing Face
+😮 Open Mouth Face
+😯 Surprised Face
+😲 Astonished Face
+🥱 Yawning Face
+😴 Sleeping Face
+🤤 Drooling Face
+😪 Sleepy Face
+😵 Dizzy Face
+🤯 Exploding Head
+🥶 Cold Face
+🥵 Hot Face
+🤠 Cowboy Face
+🤡 Clown Face
+👻 Ghost
+💀 Skull
+☠️ Skull and Crossbones
+👽 Alien
+🤖 Robot Face
+👾 Alien Monster
+🎃 Pumpkin
+👍 Thumbs Up
+👎 Thumbs Down
+👌 OK Hand
+✌️ Victory Hand
+🤞 Crossed Fingers
+🤟 Love You Gesture
+🤘 Rock On
+🤙 Call Me Hand
+👋 Waving Hand
+👏 Clapping Hands
+🙌 Raising Hands
+🙏 Folded Hands
+💪 Flexed Biceps
+👊 Fist
+✊ Raised Fist
+🤝 Handshake
+🫶 Heart Hands
+👀 Eyes
+👁️ Eye
+👄 Lips
+👅 Tongue
+👤 Bust in Silhouette
+👥 Two People
+❤️ Red Heart
+🧡 Orange Heart
+💛 Yellow Heart
+💚 Green Heart
+💙 Blue Heart
+💜 Purple Heart
+🖤 Black Heart
+🤍 White Heart
+🤎 Brown Heart
+💔 Broken Heart
+❣️ Heart Exclamation
+💕 Two Hearts
+💞 Revolving Hearts
+💓 Beating Heart
+💗 Growing Heart
+💖 Sparkling Heart
+💘 Heart with Arrow
+💝 Heart with Ribbon
+💟 Heart Decoration
+🔥 Fire
+✨ Sparkles
+⭐ Star
+🌟 Glowing Star
+💫 Dizzy
+💥 Collision
+💯 Hundred
+🎉 Party Popper
+🎊 Confetti Ball
+🎈 Balloon
+🎁 Gift
+🏆 Trophy
+🥇 Gold Medal
+🥈 Silver Medal
+🥉 Bronze Medal
+😀 Hello
+👋 Goodbye
+🙏 Thank You
+❤️ Love
+😂 Funny
+🔥 Amazing
+💯 Perfect
+✅ Done
+❌ Wrong
+⚡ Fast
+💡 Idea
+🚀 Launch
+🎯 Target
+⭐ Favorite
+🔒 Locked
+🔓 Unlocked
+⚠️ Warning
+❗ Exclamation
+❓ Question
+🍎 Apple
+🍏 Green Apple
+🍌 Banana
+🍊 Orange
+🍋 Lemon
+🍉 Watermelon
+🍇 Grapes
+🍓 Strawberry
+🍒 Cherries
+🍑 Peach
+🍍 Pineapple
+🥭 Mango
+🍕 Pizza
+🍔 Hamburger
+🍟 Fries
+🌭 Hot Dog
+🍿 Popcorn
+🍩 Donut
+🍪 Cookie
+🎂 Birthday Cake
+🍰 Cake
+🍫 Chocolate
+🍬 Candy
+☕ Coffee
+🍵 Tea
+🥤 Drink
+🍺 Beer
+🍷 Wine
+🐶 Dog
+🐱 Cat
+🐭 Mouse
+🐹 Hamster
+🐰 Rabbit
+🦊 Fox
+🐻 Bear
+🐼 Panda
+🐨 Koala
+🐯 Tiger
+🦁 Lion
+🐮 Cow
+🐷 Pig
+🐸 Frog
+🐵 Monkey
+🐔 Chicken
+🐧 Penguin
+🐦 Bird
+🦄 Unicorn
+🐝 Bee
+🦋 Butterfly
+🐢 Turtle
+🐍 Snake
+🐟 Fish
+🐬 Dolphin
+🐳 Whale
+🌞 Sun
+🌙 Moon
+⭐ Star
+☁️ Cloud
+🌧️ Rain
+⛈️ Storm
+❄️ Snowflake
+🌈 Rainbow
+🌊 Wave
+🌱 Plant
+🌲 Tree
+🌳 Forest
+🌸 Flower
+🌹 Rose
+🌻 Sunflower
+🌵 Cactus
+💻 Laptop
+🖥️ Desktop Computer
+⌨️ Keyboard
+🖱️ Mouse
+📱 Mobile Phone
+☎️ Telephone
+📷 Camera
+🎧 Headphones
+🎤 Microphone
+🎮 Game Controller
+💾 Floppy Disk
+📀 DVD
+💿 CD
+📡 Satellite
+🔋 Battery
+🔌 Plug
+🚗 Car
+🚕 Taxi
+🚌 Bus
+🚎 Trolleybus
+🏎️ Race Car
+🚓 Police Car
+🚑 Ambulance
+🚒 Fire Truck
+🚲 Bicycle
+✈️ Airplane
+🚀 Rocket
+🚢 Ship
+🚁 Helicopter
+🚂 Train
+🚇 Metro
+🏠 House
+🏢 Building
+🏫 School
+🏥 Hospital
+🏦 Bank
+🏪 Store
+⛪ Church
+🕌 Mosque
+🌍 Earth
+🌎 Americas
+🌏 Asia Australia
+⚽ Soccer
+🏀 Basketball
+🏈 Football
+⚾ Baseball
+🎾 Tennis
+🏐 Volleyball
+🏆 Trophy
+🎮 Video Game
+🎸 Guitar
+🎹 Piano
+🎧 Music
+🔴 Red Circle
+🟠 Orange Circle
+🟡 Yellow Circle
+🟢 Green Circle
+🔵 Blue Circle
+🟣 Purple Circle
+⚫ Black Circle
+⚪ White Circle
+🟫 Brown Square
+⬆️ Up Arrow
+⬇️ Down Arrow
+⬅️ Left Arrow
+➡️ Right Arrow
+✔️ Check Mark
+☑️ Checkbox
+❌ Cross Mark
+➕ Plus
+➖ Minus
+✖️ Multiply
+➗ Divide
+♻️ Recycling
+©️ Copyright
+®️ Registered
+™️ Trademark
+🇩🇿 Algeria
+🇺🇸 United States
+🇬🇧 United Kingdom
+🇨🇦 Canada
+🇫🇷 France
+🇩🇪 Germany
+🇮🇹 Italy
+🇪🇸 Spain
+🇵🇹 Portugal
+🇧🇪 Belgium
+🇳🇱 Netherlands
+🇨🇭 Switzerland
+🇦🇹 Austria
+🇸🇪 Sweden
+🇳🇴 Norway
+🇩🇰 Denmark
+🇫🇮 Finland
+🇵🇱 Poland
+🇺🇦 Ukraine
+🇷🇺 Russia
+🇬🇷 Greece
+🇹🇷 Turkey
+🇯🇵 Japan
+🇨🇳 China
+🇰🇷 South Korea
+🇮🇳 India
+🇵🇰 Pakistan
+🇧🇩 Bangladesh
+🇮🇩 Indonesia
+🇲🇾 Malaysia
+🇸🇬 Singapore
+🇹🇭 Thailand
+🇻🇳 Vietnam
+🇵🇭 Philippines
+🇦🇺 Australia
+🇳🇿 New Zealand
+🇧🇷 Brazil
+🇦🇷 Argentina
+🇨🇱 Chile
+🇨🇴 Colombia
+🇲🇽 Mexico
+🇪🇬 Egypt
+🇲🇦 Morocco
+🇹🇳 Tunisia
+🇱🇾 Libya
+🇸🇦 Saudi Arabia
+🇦🇪 United Arab Emirates
+🇶🇦 Qatar
+🇰🇼 Kuwait
+🇮🇶 Iraq
+🇯🇴 Jordan
+🇱🇧 Lebanon
+🇵🇸 Palestine
+🇿🇦 South Africa
+🇳🇬 Nigeria
+🇰🇪 Kenya
+🇪🇹 Ethiopia
+🇬🇭 Ghana
+🇾🇪 Yemen
+🇪🇭 Western Sahara
+🇸🇳 Senegal
+🇨🇮 Ivory Coast
+🇬🇲 Gambia
+🇬🇳 Guinea
+🇲🇱 Mali
+🇧🇫 Burkina Faso
+🇳🇪 Niger
+🇨🇲 Cameroon
+🇨🇩 DR Congo
+🇨🇬 Congo
+🇺🇬 Uganda
+🇹🇿 Tanzania
+🇷🇼 Rwanda
+🇸🇴 Somalia
+🇸🇩 Sudan
+🇸🇸 South Sudan
+🇿🇼 Zimbabwe
+🇿🇲 Zambia
+🇧🇼 Botswana
+🇳🇦 Namibia
+🇲🇿 Mozambique
+🇲🇬 Madagascar
+🇲🇺 Mauritius
+🇸🇨 Seychelles
+🇨🇻 Cape Verde
+🇲🇷 Mauritania
+🇹🇬 Togo
+🇧🇯 Benin
+🇸🇱 Sierra Leone
+🇱🇷 Liberia
+🇨🇫 Central African Republic
+🇬🇦 Gabon
+🇪🇷 Eritrea
+🇩🇯 Djibouti
+🇹🇩 Chad
+🇦🇴 Angola
+🏳️ White Flag
+🏴 Black Flag
+🏁 Chequered Flag
+🚩 Triangular Flag
+🎌 Crossed Flags
