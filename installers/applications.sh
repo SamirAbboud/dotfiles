@@ -42,6 +42,10 @@ copy_config nvim
 mkdir -p "$HOME/.local/state/nvim"
 printf '%s\n' "$THEME" > "$HOME/.local/state/nvim/theme"
 
+# Vim
+copy_config vim
+ln -sf "$HOME/.config/vim/vimrc" "$HOME/.vimrc"
+
 # MPV
 copy_config mpv
 

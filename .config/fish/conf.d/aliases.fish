@@ -1,5 +1,4 @@
 # General
-abbr -a vim nvim
 abbr -a code codium
 abbr -a y yazi
 abbr -a ht htop
