@@ -16,7 +16,7 @@ local startup = {
     "swaync",
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", -- PolicyKit authentication agent
     "hypridle", -- "Idle daemon"
-    "nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38", -- dock
+    -- "nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38", -- dock
     "~/.local/bin/at_startup" -- Misc user defined custom shell scripts
 }
 

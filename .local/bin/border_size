@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Error: A value must be provided."
+    exit 1
+fi
+
+VALUE=$1
+
+CURRENT_SIZE=$(hyprctl getoption general:border_size -j | jq '.int')
+NEW_SIZE=$((CURRENT_SIZE + VALUE))
+
+if [ "$NEW_SIZE" -lt 0 ]; then
+    NEW_SIZE=0
+fi
+
+hyprctl eval "hl.config({ general = { border_size = $NEW_SIZE } })"
+
+notify-send --app-name "$0" \
+            "Border size changed" "Current border size: $NEW_SIZE" \
+            -h "string:x-canonical-private-synchronous:$0"

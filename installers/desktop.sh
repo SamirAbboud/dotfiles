@@ -20,7 +20,7 @@ check_dependency hyprlock "sudo pacman -S hyprlock"
 check_dependency waybar "sudo pacman -S waybar"
 check_dependency swaync "sudo pacman -S swaynotificationcenter"
 check_dependency rofi "sudo pacman -S rofi-wayland"
-check_dependency nwg-dock-hyprland "sudo pacman -S nwg-dock-hyprland"
+#check_dependency nwg-dock-hyprland "sudo pacman -S nwg-dock-hyprland"
 
 check_dependency powerprofilesctl "sudo pacman -S power-profiles-daemon"
 
@@ -53,5 +53,5 @@ link_theme rofi rasi themes/colors/colors.rasi themes/colors
 
 
 # nwg-dock-hyprland
-copy_config nwg-dock-hyprland
-link_theme nwg-dock-hyprland css colors.css
+# copy_config nwg-dock-hyprland
+# link_theme nwg-dock-hyprland css colors.css

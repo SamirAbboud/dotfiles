@@ -1,15 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    "width": 1572,
+    "width": 1590,
     "height": 25,
     "margin": "5 0",
 
     "group/left" : {
         "orientation": "horizontal",
         "modules" : [
-            "hyprland/workspaces", 
-//            "niri/workspaces",
+            "hyprland/workspaces",
             "mpris"
         ]
     },

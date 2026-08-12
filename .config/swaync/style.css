@@ -4,9 +4,9 @@
 	all: unset;
 
 	/* Global style variables */
-	--border-radius: 16px;
-	--border-radius-s: 8px;
-	--border-radius-xl: 18px;
+	--border-radius: 10px;
+	--border-radius-s: 5px;
+	--border-radius-xl: 15px;
 
 	/* Shadows: set to none to disable */
 	--shadow: 2px 4px 10px rgba(0,0,0,0.15);
@@ -22,7 +22,7 @@
 .notification-background {
 	background: @notification-bg;
 	border-radius: var(--border-radius);
-	margin: 8px 13px 2px;
+	margin: 5px 5px 5px;
 	padding: 0;
 	/* box-shadow: none; */
 }
@@ -109,14 +109,14 @@
 .control-center {
 	background: @center-bg;
 	border-radius: var(--border-radius);
-	margin: 13px;
+	margin: 5px;
 	padding: 5px 5px 0 5px;
 }
 
 .control-center .notification-background {
 	background: @center-notification-bg;
 	box-shadow: var(--shadow);
-	margin: 8px 5px;
+	margin: 10px 0 0;
 }
 
 /* Remove close buttons in notification center */
@@ -305,7 +305,7 @@
 .widget-backlight {
 	padding: 8px 14px;
 	margin: 5px 5px;
-	border-radius: 12px;
+	border-radius: var(--border-radius);
 	color: @text;
 	font-weight: 800;
 	background: @background-alt;

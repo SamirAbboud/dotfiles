@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Error: A value must be provided."
+    exit 1
+fi
+
+VALUE=$1
+
+CURRENT_ROUNDING=$(hyprctl getoption decoration:rounding -j | jq '.int')
+NEW_ROUNDING=$((CURRENT_ROUNDING + VALUE))
+
+if [ "$NEW_ROUNDING" -lt 0 ]; then
+    NEW_ROUNDING=0
+fi
+
+hyprctl eval "hl.config({ decoration = { rounding = $NEW_ROUNDING } })"
+
+notify-send --app-name "$0" \
+            "Rounding changed" "Current rounding: $NEW_ROUNDING" \
+            -h "string:x-canonical-private-synchronous:$0"

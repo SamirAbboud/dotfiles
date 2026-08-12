@@ -2,7 +2,7 @@
 
 add_newline = false
 
-format = "$os  $username [on](dimmed white) $directory$git_branch$cmd_duration $character"
+format = "$os  $username [in](dimmed white) $directory$git_branch$cmd_duration $character"
 
 [username]
 show_always = true

@@ -19,7 +19,7 @@ window {
     transparency:               "real";
     location:                   north;
     anchor:                     north;
-    width:                      1920px;
+    width:                      1630px;
     enabled:                    true;
     margin:                     5px;
     border-radius:              15px;

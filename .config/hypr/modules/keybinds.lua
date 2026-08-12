@@ -52,6 +52,14 @@ hl.bind(mainMod .. " + SHIFT + tab", run_script("cycle_layout --prev"))
 -- Toggle swaync
 hl.bind(mainMod .. " + T", run("swaync-client -t"))
 
+-- Increment/decrement border size
+hl.bind(mainMod .. " + F7", run_script("border_size +1"))
+hl.bind(mainMod .. " + F6", run_script("border_size -1"))
+
+-- Increment/decrement rounding
+hl.bind(mainMod .. " + F9", run_script("rounding +1"))
+hl.bind(mainMod .. " + F8", run_script("rounding -1"))
+
 -- Change theme
 hl.bind(mainMod .. " + SHIFT + T", run_script("theme"))
 

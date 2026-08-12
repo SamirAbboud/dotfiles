@@ -235,14 +235,14 @@ ln -sfn \
 
 
 # 14. nwg-dock-hyprland
-ln -sfn \
-    "$NWG_DOCK_DIR/themes/$theme.css" \
-    "$NWG_DOCK_DIR/colors.css"
+# ln -sfn \
+#     "$NWG_DOCK_DIR/themes/$theme.css" \
+#     "$NWG_DOCK_DIR/colors.css"
 
-killall nwg-dock-hyprland 2>/dev/null || true
+# killall nwg-dock-hyprland 2>/dev/null || true
 
-nwg-dock-hyprland \
-    -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38 >/dev/null 2>&1 &
+# nwg-dock-hyprland \
+#     -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38 >/dev/null 2>&1 &
 
 
 notify "$theme"

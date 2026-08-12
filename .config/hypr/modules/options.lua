@@ -9,8 +9,8 @@ local colors = require("colors")
 
 hl.config({
     general = {
-        gaps_in  = 7,
-        gaps_out = 13,
+        gaps_in  = 5,
+        gaps_out = 5,
 
         border_size = 0,
 
@@ -83,7 +83,7 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 15,
+        rounding       = 10,
 
         dim_inactive = false,
         dim_strength = 0.12,

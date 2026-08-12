@@ -65,7 +65,7 @@
 #right-hidden-top, 
 #left-hidden-top {
     padding: 2px 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     background: @module-bg;
 }
 
@@ -81,13 +81,13 @@
 #clock {
     background: @module-bg;
     padding: 1px 18px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #language {
     background: @module-bg;
     padding: 1px 15px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #custom-ctlcenter {
