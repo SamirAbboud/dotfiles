@@ -3,11 +3,19 @@ abbr -a code codium
 abbr -a y yazi
 abbr -a ht htop
 abbr -a cls clear
-abbr -a ls "eza -a --icons"
-abbr -a ll "eza -lh --icons --git"
-abbr -a la "eza -lah --icons --git"
-abbr -a lt "eza -a --tree --level=1 --icons"
-abbr -a cat bat
+abbr -a ls "eza -a --icons=auto"
+abbr -a ll "eza -lh --icons=auto --git"
+abbr -a la "eza -lah --icons=auto --git"
+abbr -a lt "eza -a --tree --level=1 --icons=auto"
+
+# Git
+abbr -a ga "git add ."
+abbr -a gc "git commit -m"
+abbr -a gi "git init"
+abbr -a gs "git status"
+abbr -a gp "git push"
+abbr -a gl "git log"
+abbr -a nah "git reset --hard && git clean -df"
 
 function sfetch
     set config "$HOME/.config/sfetch/default.py"
