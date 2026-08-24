@@ -17,20 +17,20 @@ abbr -a gp "git push"
 abbr -a gl "git log"
 abbr -a nah "git reset --hard && git clean -df"
 
-function sfetch
-    set config "$HOME/.config/sfetch/default.py"
+function sf
+    set config "$HOME/.config/sfetch/config.toml"
 
     switch "$argv[1]"
         case --minimal
-            set config "$HOME/.config/sfetch/minimal.py"
+            set config "$HOME/.config/sfetch/minimal.toml"
             set -e argv[1]
 
         case --long
-            set config "$HOME/.config/sfetch/long.py"
+            set config "$HOME/.config/sfetch/long.toml"
             set -e argv[1]
     end
 
-    python3 "$HOME/sfetch/sfetch.py" --config "$config" $argv
+    command sfetch --config "$config" $argv
 end
 
 function theme-switch

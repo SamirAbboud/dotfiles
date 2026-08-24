@@ -54,9 +54,6 @@ check_dependency nmtui "sudo pacman -S networkmanager"
 # Configure Utilities
 # -----------------------------------------------------------------------------
 
-# Sfetch
-copy_config sfetch
-
 # Auto_Walls
 copy_config auto_walls
 

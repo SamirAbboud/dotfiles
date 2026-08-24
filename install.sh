@@ -27,6 +27,7 @@ source "$INSTALL_DIR/installers/lib.sh"
 "$INSTALL_DIR/installers/utilities.sh"
 "$INSTALL_DIR/installers/desktop.sh"
 "$INSTALL_DIR/installers/thunar.sh"
+"$INSTALL_DIR/installers/sfetch.sh"
 "$INSTALL_DIR/installers/local-bin.sh"
 
 
