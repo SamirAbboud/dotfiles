@@ -24,7 +24,7 @@ declare -A GTK_ROOT=(
 
 declare -A ICON_THEME=(
     [tokyodark]="Tela-blue-dark"
-    [tokyonight]="Tela-blue-dark"
+    [tokyonight]="Tela-dark"
     [catppuccin]="Tela-dracula-dark"
     [gruvbox]="Tela-ubuntu-dark"
     [everforest]="Tela-manjaro-dark"

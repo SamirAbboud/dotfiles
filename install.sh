@@ -29,6 +29,7 @@ source "$INSTALL_DIR/installers/lib.sh"
 "$INSTALL_DIR/installers/thunar.sh"
 "$INSTALL_DIR/installers/sfetch.sh"
 "$INSTALL_DIR/installers/local-bin.sh"
+"$INSTALL_DIR/installers/wallpapers.sh"
 
 
 # -----------------------------------------------------------------------------
