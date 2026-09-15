@@ -1,0 +1,37 @@
+{
+  "name": "custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "html",
+          "blade",
+          "twig",
+          "liquid",
+          "php",
+          "htmldjango",
+          "ejs",
+          "handlebars",
+          "javascriptreact",
+          "typescriptreact",
+          "vue",
+          "svelte"
+        ],
+        "path": "./html.json"
+      },
+      {
+        "language": [
+          "php",
+          "blade"
+        ],
+        "path": "./php.json"
+      },
+      {
+        "language": [
+          "blade"
+        ],
+        "path": "./blade.json"
+      }
+    ]
+  }
+}

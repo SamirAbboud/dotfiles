@@ -1,0 +1,95 @@
+{
+  "PHP Open Tag": {
+    "prefix": "php",
+    "body": [
+      "<?php",
+      "",
+      "${0}"
+    ],
+    "description": "Open PHP tag"
+  },
+  "Echo Variable / Short Tag": {
+    "prefix": "pe",
+    "body": [
+      "<?= \\$${1:var} ?>"
+    ],
+    "description": "PHP short echo tag"
+  },
+  "Public Function": {
+    "prefix": "pubf",
+    "body": [
+      "public function ${1:name}(${2}): ${3:void}",
+      "{",
+      "    ${0}",
+      "}"
+    ],
+    "description": "Public method"
+  },
+  "Private Function": {
+    "prefix": "prif",
+    "body": [
+      "private function ${1:name}(${2}): ${3:void}",
+      "{",
+      "    ${0}",
+      "}"
+    ],
+    "description": "Private method"
+  },
+  "Protected Function": {
+    "prefix": "prof",
+    "body": [
+      "protected function ${1:name}(${2}): ${3:void}",
+      "{",
+      "    ${0}",
+      "}"
+    ],
+    "description": "Protected method"
+  },
+  "Traditional Constructor": {
+    "prefix": "__construct",
+    "body": [
+      "public function __construct(\\$${1:param})",
+      "{",
+      "    \\$this->${2:property} = \\$${1:param};",
+      "    ${0}",
+      "}"
+    ],
+    "description": "Traditional PHP constructor"
+  },
+  "Try Catch Block": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "    ${0}",
+      "} catch (\\\\${1:Throwable} \\$e) {",
+      "    ${2}",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+  "Foreach Loop": {
+    "prefix": "fore",
+    "body": [
+      "foreach (\\$${1:items} as \\$${2:item}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "Foreach loop"
+  },
+  "Foreach Key-Value Loop": {
+    "prefix": "forekv",
+    "body": [
+      "foreach (\\$${1:items} as \\$${2:key} => \\$${3:value}) {",
+      "    ${0}",
+      "}"
+    ],
+    "description": "Foreach key-value loop"
+  },
+  "Dump and Die": {
+    "prefix": "dd",
+    "body": [
+      "dd(\\$${1:var});"
+    ],
+    "description": "Laravel / Symfony dump and die"
+  }
+}

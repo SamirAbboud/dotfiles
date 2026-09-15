@@ -1,0 +1,130 @@
+{
+  "HTML5 Doctype & Boilerplate": {
+    "prefix": "!",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>${1:Document}</title>",
+      "  ${0}",
+      "</head>",
+      "<body>",
+      "",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML5 doctype and boilerplate layout"
+  },
+  "HTML5 Template": {
+    "prefix": "html5",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "  <title>${1:Document}</title>",
+      "  ${0}",
+      "</head>",
+      "<body>",
+      "",
+      "</body>",
+      "</html>"
+    ],
+    "description": "HTML5 boilerplate structure"
+  },
+  "Doctype": {
+    "prefix": "doctype",
+    "body": ["<!DOCTYPE html>"],
+    "description": "HTML5 doctype declaration"
+  },
+  "HTML Tag": {
+    "prefix": "html",
+    "body": ["<html lang=\"${1:en}\">", "  ${0}", "</html>"],
+    "description": "html root element"
+  },
+  "Head Tag": {
+    "prefix": "head",
+    "body": [
+      "<head>",
+      "  <meta charset=\"UTF-8\">",
+      "  <title>${1:Title}</title>",
+      "  ${0}",
+      "</head>"
+    ],
+    "description": "head element"
+  },
+  "Body Tag": {
+    "prefix": "body",
+    "body": ["<body>", "  ${0}", "</body>"],
+    "description": "body element"
+  },
+  "Div Tag": {
+    "prefix": "div",
+    "body": ["<div class=\"${1:class}\">", "  ${0}", "</div>"],
+    "description": "div element with class attribute"
+  },
+  "Paragraph Tag": {
+    "prefix": "p",
+    "body": ["<p>${0}</p>"],
+    "description": "paragraph element"
+  },
+  "Anchor / Link": {
+    "prefix": "a",
+    "body": ["<a href=\"${1:#}\">${2:link text}</a>"],
+    "description": "anchor element"
+  },
+  "External CSS Link": {
+    "prefix": "link",
+    "body": ["<link rel=\"stylesheet\" href=\"${1:style.css}\">"],
+    "description": "CSS stylesheet link tag"
+  },
+  "Image Tag": {
+    "prefix": "img",
+    "body": ["<img src=\"${1:src}\" alt=\"${2:alt text}\">"],
+    "description": "image element"
+  },
+  "Button Tag": {
+    "prefix": "button",
+    "body": ["<button type=\"${1:button}\">${2:Click}</button>"],
+    "description": "button element"
+  },
+  "Input Field": {
+    "prefix": "input",
+    "body": [
+      "<input type=\"${1:text}\" name=\"${2:name}\" id=\"${3:id}\" placeholder=\"${4}\">"
+    ],
+    "description": "input element with attributes"
+  },
+  "Textarea Tag": {
+    "prefix": "textarea",
+    "body": [
+      "<textarea name=\"${1:name}\" id=\"${2:id}\" rows=\"${3:4}\" cols=\"${4:50}\" placeholder=\"${5}\"></textarea>"
+    ],
+    "description": "textarea element"
+  },
+  "Meta Tag": {
+    "prefix": "meta",
+    "body": [
+      "<meta name=\"${1:viewport}\" content=\"${2:width=device-width, initial-scale=1.0}\">"
+    ],
+    "description": "meta tag element"
+  },
+  "Title Tag": {
+    "prefix": "title",
+    "body": ["<title>${1:Document}</title>"],
+    "description": "title element"
+  },
+  "Label Tag": {
+    "prefix": "label",
+    "body": ["<label for=\"${1:id}\">${2:Label}</label>"],
+    "description": "label element with for attribute"
+  },
+  "Span Tag": {
+    "prefix": "span",
+    "body": ["<span>${0}</span>"],
+    "description": "span inline element"
+  }
+}

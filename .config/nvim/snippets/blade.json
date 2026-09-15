@@ -1,0 +1,330 @@
+{
+  "Blade Extends": {
+    "prefix": "b:extends",
+    "body": [
+      "@extends('${1:layouts.app}')",
+      "${0}"
+    ],
+    "description": "Extend a parent layout"
+  },
+  "Blade Section": {
+    "prefix": "b:section",
+    "body": [
+      "@section('${1:content}')",
+      "    ${0}",
+      "@endsection"
+    ],
+    "description": "Blade section block"
+  },
+  "Blade Yield": {
+    "prefix": "b:yield",
+    "body": [
+      "@yield('${1:content}')"
+    ],
+    "description": "Yield a section content"
+  },
+  "Blade Include": {
+    "prefix": "b:include",
+    "body": [
+      "@include('${1:components.name}')"
+    ],
+    "description": "Include a sub-view"
+  },
+  "Blade Component Tag": {
+    "prefix": "b:component",
+    "body": [
+      "<x-${1:component-name}>",
+      "    ${0}",
+      "</x-${1:component-name}>"
+    ],
+    "description": "Blade x-component tag"
+  },
+  "Blade Classic Component Directive": {
+    "prefix": "b:component-dir",
+    "body": [
+      "@component('${1:components.card}')",
+      "    ${0}",
+      "@endcomponent"
+    ],
+    "description": "Classic @component directive"
+  },
+  "Blade Slot Tag": {
+    "prefix": "b:slot",
+    "body": [
+      "<x-slot name=\"${1:title}\">",
+      "    ${0}",
+      "</x-slot>"
+    ],
+    "description": "Blade x-slot tag"
+  },
+  "Blade Slot Directive": {
+    "prefix": "b:slot-dir",
+    "body": [
+      "@slot('${1:title}')",
+      "    ${0}",
+      "@endslot"
+    ],
+    "description": "Classic @slot directive"
+  },
+  "Blade Component Props": {
+    "prefix": "b:props",
+    "body": [
+      "@props(['${1:prop}' => ${2:default}])"
+    ],
+    "description": "Define component properties"
+  },
+  "Blade If": {
+    "prefix": "b:if",
+    "body": [
+      "@if (${1:\\$condition})",
+      "    ${0}",
+      "@endif"
+    ],
+    "description": "@if directive"
+  },
+  "Blade If Else": {
+    "prefix": "b:ifelse",
+    "body": [
+      "@if (${1:\\$condition})",
+      "    ${2}",
+      "@else",
+      "    ${0}",
+      "@endif"
+    ],
+    "description": "@if @else directive"
+  },
+  "Blade Unless": {
+    "prefix": "b:unless",
+    "body": [
+      "@unless (${1:\\$condition})",
+      "    ${0}",
+      "@endunless"
+    ],
+    "description": "@unless directive"
+  },
+  "Blade Isset": {
+    "prefix": "b:isset",
+    "body": [
+      "@isset(\\$${1:variable})",
+      "    ${0}",
+      "@endisset"
+    ],
+    "description": "@isset directive"
+  },
+  "Blade Foreach": {
+    "prefix": "b:foreach",
+    "body": [
+      "@foreach (\\$${1:items} as \\$${2:item})",
+      "    ${0}",
+      "@endforeach"
+    ],
+    "description": "@foreach loop directive"
+  },
+  "Blade Forelse": {
+    "prefix": "b:forelse",
+    "body": [
+      "@forelse (\\$${1:items} as \\$${2:item})",
+      "    ${3}",
+      "@empty",
+      "    ${0}",
+      "@endforelse"
+    ],
+    "description": "@forelse directive with @empty fallback"
+  },
+  "Blade Loop First": {
+    "prefix": "b:loop-first",
+    "body": [
+      "@if (\\$loop->first)",
+      "    ${0}",
+      "@endif"
+    ],
+    "description": "Check if first iteration of Blade loop"
+  },
+  "Blade Loop Last": {
+    "prefix": "b:loop-last",
+    "body": [
+      "@if (\\$loop->last)",
+      "    ${0}",
+      "@endif"
+    ],
+    "description": "Check if last iteration of Blade loop"
+  },
+  "Blade Switch": {
+    "prefix": "b:switch",
+    "body": [
+      "@switch(\\$${1:variable})",
+      "    @case(${2:value})",
+      "        ${3}",
+      "        @break",
+      "    @default",
+      "        ${0}",
+      "@endswitch"
+    ],
+    "description": "@switch block"
+  },
+  "Blade Class Directive": {
+    "prefix": "b:class",
+    "body": [
+      "@class(['${1:p-4}' => ${2:\\$condition}])"
+    ],
+    "description": "Conditional CSS class directive"
+  },
+  "Blade Can Authorization": {
+    "prefix": "b:can",
+    "body": [
+      "@can('${1:update}', \\$${2:model})",
+      "    ${0}",
+      "@endcan"
+    ],
+    "description": "@can policy authorization block"
+  },
+  "Blade Can Else": {
+    "prefix": "b:canelse",
+    "body": [
+      "@can('${1:update}', \\$${2:model})",
+      "    ${3}",
+      "@elsecan('${4:delete}', \\$${2:model})",
+      "    ${5}",
+      "@else",
+      "    ${0}",
+      "@endcan"
+    ],
+    "description": "@can with @elsecan and @else fallback"
+  },
+  "Blade Auth": {
+    "prefix": "b:auth",
+    "body": [
+      "@auth",
+      "    ${0}",
+      "@endauth"
+    ],
+    "description": "Authenticated user check"
+  },
+  "Blade Guest": {
+    "prefix": "b:guest",
+    "body": [
+      "@guest",
+      "    ${0}",
+      "@endguest"
+    ],
+    "description": "Guest user check"
+  },
+  "Blade Raw PHP Block": {
+    "prefix": "b:php",
+    "body": [
+      "@php",
+      "    ${0}",
+      "@endphp"
+    ],
+    "description": "Raw @php block"
+  },
+  "Blade Echo Encoded": {
+    "prefix": "b:echo",
+    "body": [
+      "{{ \\$${1:var} }}"
+    ],
+    "description": "Escaped echo statement {{ }}"
+  },
+  "Blade Echo Unescaped Raw HTML": {
+    "prefix": "b:echohtml",
+    "body": [
+      "{!! \\$${1:var} !!}"
+    ],
+    "description": "Raw unescaped echo statement {!! !!}"
+  },
+  "Blade Comment": {
+    "prefix": "b:comment",
+    "body": [
+      "{{-- ${1:comment} --}}"
+    ],
+    "description": "Blade hidden comment {{-- --}}"
+  },
+  "Blade CSRF Directive": {
+    "prefix": "b:csrf",
+    "body": [
+      "@csrf"
+    ],
+    "description": "CSRF hidden input field"
+  },
+  "Blade Method Spoofing": {
+    "prefix": "b:method",
+    "body": [
+      "@method('${1:PUT}')"
+    ],
+    "description": "HTTP method spoofing directive"
+  },
+  "Blade Error Directive": {
+    "prefix": "b:error",
+    "body": [
+      "@error('${1:field}')",
+      "    <div class=\"text-red-500\">{{ \\$message }}</div>",
+      "@enderror"
+    ],
+    "description": "Form field validation error directive"
+  },
+  "Blade Push": {
+    "prefix": "b:push",
+    "body": [
+      "@push('${1:scripts}')",
+      "    ${0}",
+      "@endpush"
+    ],
+    "description": "Push content to stack"
+  },
+  "Blade Stack": {
+    "prefix": "b:stack",
+    "body": [
+      "@stack('${1:scripts}')"
+    ],
+    "description": "Render stacked content"
+  },
+  "Blade Vite Directive": {
+    "prefix": "b:vite",
+    "body": [
+      "@vite(['resources/css/app.css', 'resources/js/app.js'])"
+    ],
+    "description": "Vite assets directive"
+  },
+  "Helper route()": {
+    "prefix": "b:route",
+    "body": [
+      "{{ route('${1:name}', [${2}]) }}"
+    ],
+    "description": "Blade route() helper snippet"
+  },
+  "Helper url()": {
+    "prefix": "b:url",
+    "body": [
+      "{{ url('${1:path}') }}"
+    ],
+    "description": "Blade url() helper snippet"
+  },
+  "Helper asset()": {
+    "prefix": "b:asset",
+    "body": [
+      "{{ asset('${1:path}') }}"
+    ],
+    "description": "Blade asset() helper snippet"
+  },
+  "Helper csrf_field()": {
+    "prefix": "b:csrf-field",
+    "body": [
+      "{{ csrf_field() }}"
+    ],
+    "description": "CSRF field input function snippet"
+  },
+  "Helper csrf_token()": {
+    "prefix": "b:csrf-token",
+    "body": [
+      "{{ csrf_token() }}"
+    ],
+    "description": "CSRF token string function snippet"
+  },
+  "Helper Translation __()": {
+    "prefix": "b:trans",
+    "body": [
+      "{{ __('${1:key}') }}"
+    ],
+    "description": "Localization translation __() snippet"
+  }
+}
