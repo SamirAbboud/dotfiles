@@ -3,7 +3,8 @@
 -------------------
 
 local startup = {
-    "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",  -- Update some dbus variables
+    "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE",
+    "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE",
     "gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice", -- Set cursor theme in gsettings 
     "hyprctl setcursor Bibata-Modern-Ice 24", -- Set cursor theme for hyprland
 
@@ -14,10 +15,8 @@ local startup = {
     "awww-daemon",
     "waybar",
     "swaync",
-    "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", -- PolicyKit authentication agent
     "hypridle", -- "Idle daemon"
-    -- "nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38", -- dock
-    "~/.local/bin/at_startup" -- Misc user defined custom shell scripts
+    os.getenv("HOME") .. "/.local/bin/at_startup" -- Misc user defined custom shell scripts
 }
 
 hl.on("hyprland.start", function()

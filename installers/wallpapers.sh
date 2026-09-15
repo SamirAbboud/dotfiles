@@ -14,16 +14,29 @@ source "$SCRIPT_DIR/lib.sh"
 # Dependencies
 # -----------------------------------------------------------------------------
 
+check_dependency git "sudo pacman -S git"
+check_dependency rustup "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
 check_dependency rsync "sudo pacman -S rsync"
+check_dependency ffmpeg "sudo pacman -S ffmpeg"
+check_dependency rofi "sudo pacman -S rofi"
+check_dependency awww "sudo pacman -S awww"
+
+# -----------------------------------------------------------------------------
+# Install Autowalls
+# -----------------------------------------------------------------------------
+
+cargo install --git https://github.com/SamirAbboud/autowalls.git --force --locked
 
 
 # -----------------------------------------------------------------------------
-# Directories
+# Directories & Config
 # -----------------------------------------------------------------------------
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 
 mkdir -p "$WALLPAPER_DIR"
+
+copy_config autowalls
 
 
 # -----------------------------------------------------------------------------
@@ -38,4 +51,4 @@ rsync -av --delete \
 # Generate Thumbnails
 # -----------------------------------------------------------------------------
 
-auto_walls rofi --gen-thumbnails
+autowalls rofi --gen-thumbnails

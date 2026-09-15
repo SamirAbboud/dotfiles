@@ -110,21 +110,20 @@ hl.bind(mainMod .. " + ESCAPE",         toggle_rofi_script("logout"))           
 hl.bind(mainMod .. " + SHIFT + D",      toggle_rofi_script("run"))                       -- Raw commands launcher
 hl.bind(mainMod .. " + SHIFT + V",      toggle_rofi_script("icons"))                     -- Nerd font glyphs picker
 hl.bind(mainMod .. " + CTRL + V",       toggle_rofi_script("emoji"))                     -- Emoji picker
-hl.bind(mainMod .. " + Y",              toggle_rofi(scripts .. "auto_walls rofi"))       -- Wallpapers menu
+hl.bind(mainMod .. " + Y",              toggle_rofi("autowalls rofi"))                   -- Wallpapers menu
 
 
 -- Misc bindings
-hl.bind(mainMod .. " + CTRL + R",       run("killall waybar ; waybar &"))              -- Restart waybar
+hl.bind(mainMod .. " + CTRL + R",       run("pkill -f '^waybar$' ; waybar &"))         -- Restart waybar
 hl.bind(mainMod .. " + MINUS",          run_script("volume -2"), {repeating = true})   -- Decrease volume by 2
 hl.bind(mainMod .. " + EQUAL",          run_script("volume +2"), {repeating = true})   -- Increase volume by 2
 
-hl.bind(mainMod .. " + SPACE",          run("pkill -SIGRTMIN+1 -f nwg-dock-hyprland")) -- Hide / show dock 
 hl.bind(mainMod .. " + period",         run("playerctl next"))                         -- Play next song
 hl.bind(mainMod .. " + comma",          run("playerctl previous"))                     -- Play previous song
 hl.bind(mainMod .. " + slash",          run("playerctl play-pause"))                   -- Play or pause song
-hl.bind(mainMod .. " + SHIFT + slash",  run_script("auto_walls toggle"))               -- Toggle wallpapers cycling 
-hl.bind(mainMod .. " + SHIFT + period", run_script("auto_walls next"))                 -- Set next wallpaper
-hl.bind(mainMod .. " + SHIFT + comma",  run_script("auto_walls prev"))                 -- Set previous wallpaper
+hl.bind(mainMod .. " + SHIFT + slash",  run("autowalls toggle"))                       -- Toggle wallpapers cycling 
+hl.bind(mainMod .. " + SHIFT + period", run("autowalls next"))                         -- Set next wallpaper
+hl.bind(mainMod .. " + SHIFT + comma",  run("autowalls prev"))                         -- Set previous wallpaper
 
 hl.bind("Print",                  run_script("screenshot"))                      -- Screenshot
 hl.bind("SHIFT + Print",          run_script("screenshot --select"))             -- Screenshot selected area
@@ -183,5 +182,5 @@ hl.bind("XF86MonBrightnessUp",  run_script("brightness 5%+"),                   
 hl.bind("XF86MonBrightnessDown",run_script("brightness 5%-"),                     { locked = true, repeating = true })
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.resize(),   { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.drag(), { mouse = true })

@@ -18,11 +18,3 @@ mkdir -p "$HOME/.local/bin"
 
 cp -a "$ROOT_DIR/.local/bin/." "$HOME/.local/bin/"
 
-link_file \
-    "$HOME/autowalls/main.py" \
-    "$HOME/.local/bin/auto_walls"
-
-# ln -sfn \
-#     "$HOME/.local/bin/auto_walls" \
-#     "$HOME/.local/bin/startup/auto_walls"
-

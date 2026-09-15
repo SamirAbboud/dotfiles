@@ -1,0 +1,8 @@
+{
+    "interval": 10, 
+    "wallpapers_dir": "$XDG_PICTURES_DIR/Wallpapers", 
+    "wallpapers_cli": "awww img --transition-type grow --transition-pos center <picture>", 
+    "notify": true, 
+    "transition_duration": 1,
+    "rofi_theme": "~/.config/rofi/themes/wallpapers.rasi"
+}
