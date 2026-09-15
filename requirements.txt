@@ -52,6 +52,11 @@
 # Theme Build Tools
     sudo pacman -S git sassc
 
+# Fonts
+#
+# Primary Desktop & Monospace Fonts
+    sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd
+
 # -----------------------------------------------------------------------------
 # Applications
 # -----------------------------------------------------------------------------

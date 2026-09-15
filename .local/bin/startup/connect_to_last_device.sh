@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Connect to the last / preferred bluetooth device at startup
 # If could not, turn bluetooth off
 

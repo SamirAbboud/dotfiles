@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ -v HYPRLAND_INSTANCE_SIGNATURE ]] && [ "$(id -u)" -ne 0 ]; then # We better not do this things as root
     # We're on hyprland, apply some things

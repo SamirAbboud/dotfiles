@@ -23,7 +23,8 @@ check_dependency sassc "sudo pacman -S sassc"
 
 load_theme() {
     local theme="${1:-$THEME}"
-
+    
+    # shellcheck source=/dev/null
     source "$SCRIPT_DIR/themes/$theme.sh"
 }
 
@@ -179,6 +180,12 @@ install_icon_theme() {
 configure_gtk() {
     local gtk_theme_dir="$HOME/.themes/$GTK_THEME"
 
+    # Batch-update source template files in ROOT_DIR before copying
+    sed -i -E "s/^gtk-font-name=.*/gtk-font-name=\"$FONT_NAME\"/" "$ROOT_DIR/.config/gtk-2.0/themes/"* 2>/dev/null || true
+    sed -i -E "s/^gtk-font-name=.*/gtk-font-name=$FONT_NAME/" "$ROOT_DIR/.config/gtk-3.0/themes/"*.ini 2>/dev/null || true
+    sed -i -E "s/^gtk-font-name=.*/gtk-font-name=$FONT_NAME/" "$ROOT_DIR/.config/gtk-4.0/themes/"*.ini 2>/dev/null || true
+    sed -i -E "s|Gtk/FontName .*|Gtk/FontName \"$FONT_NAME\"|" "$ROOT_DIR/.config/xsettingsd/themes/"*.conf 2>/dev/null || true
+
     # GTK 2
     copy_config gtk-2.0
     cp \
@@ -215,10 +222,12 @@ apply_theme() {
     # Apply theme
     gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
     gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
+    gsettings set org.gnome.desktop.interface font-name "$FONT_NAME"
 
     # Reset Flatpak overrides
     if command -v flatpak >/dev/null; then
         flatpak override --user --reset
+        flatpak override --user --env=GTK_FONT_NAME="$FONT_NAME"
     fi
 }
 

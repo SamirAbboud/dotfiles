@@ -1,24 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-FILE=$XDG_PICTURES_DIR/Screenshots/"$(date +"%Y-%m-%d_%H-%M-%S").png"
+FILE="$XDG_PICTURES_DIR/Screenshots/$(date +"%Y-%m-%d_%H-%M-%S").png"
 
 if [[ "$1" == "--select" ]]; then
-    if which flameshot >/dev/null 2>&1; then
-        flameshot gui --path $FILE
-    else
-        grim -g "$(slurp)" $FILE
-    fi
-
+    grim -g "$(slurp)" "$FILE"
     STATUS=$?
 else
-    grim $FILE
+    grim "$FILE"
     STATUS=$?
 fi
 
 if [[ $STATUS -eq 0 ]]; then
-    wl-copy < $FILE &
+    wl-copy < "$FILE"
 
-    notify-send --app-name "$0" \
-                --icon "$FILE" \
-                "New screenshot" "$FILE"
+    notify-send \
+        --app-name "Screenshot" \
+        --icon "$FILE" \
+        "New screenshot" "$FILE"
+
+    # loupe "$FILE" &
 fi

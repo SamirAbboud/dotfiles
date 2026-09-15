@@ -13,6 +13,8 @@
 # -----------------------------------------------------------------------------
 
 THEME="tokyodark"
+FONT_NAME="JetBrains Mono SemiBold 11"
+
 
 THEMES=(
     tokyodark
