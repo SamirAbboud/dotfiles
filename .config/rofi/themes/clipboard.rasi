@@ -12,7 +12,7 @@ configuration {
 }
 
 * {
-    font:                   "CaskaydiaCove Nerd Font, bold 12";
+    font:                       "JetBrainsMono Nerd Font SemiBold 12";
 }
 
 window {

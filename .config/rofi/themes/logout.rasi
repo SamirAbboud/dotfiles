@@ -12,7 +12,7 @@ configuration {
 }
 
 * {
-    font:                        "CaskaydiaCove Nerd Font, bold 14";
+    font:                       "JetBrainsMono Nerd Font Bold 14";
 }
 
 window {
@@ -136,7 +136,7 @@ element {
 }
 
 element-text {
-    font: "CaskaydiaCove Nerd Font Propo, bold 16";
+    font: "JetBrainsMono Nerd Font Propo Bold 16";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

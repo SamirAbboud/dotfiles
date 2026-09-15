@@ -5,7 +5,7 @@ let lspServers = [
       \ #{
       \   name: 'rust-analyzer',
       \   filetype: ['rust'],
-      \   path: '~/.local/share/nvim/mason/bin/rust-analyzer',
+      \   path: 'rust-analyzer',
       \   args: []
       \ }
       \ ]

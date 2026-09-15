@@ -16,7 +16,7 @@ style = "bold #7fbbb3"
 
 [os.symbols]
 Arch = ""
-Fedora = ""
+NixOS = ""
 Ubuntu = ""
 Debian = ""
 Alpine = ""

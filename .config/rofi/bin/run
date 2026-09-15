@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 rofi -theme ~/.config/rofi/themes/launcher.rasi \
      -theme-str 'mainbox {children: [ "inputbar", "message", "listview"];}' \
