@@ -38,8 +38,8 @@ hl.config({
     },
 
     scrolling = {
-        explicit_column_widths = "0.5, 0.6, 0.9, 1.0",
-        column_width = 0.6,
+        explicit_column_widths = "0.7, 0.85, 1.0",
+        column_width = 0.8,
 
         -- when a window is focused, require that at least 
         -- a given fraction of it is visible for focus to follow. [0.0 - 1.0]
@@ -69,7 +69,7 @@ hl.config({
 
             font_weight_active = "bold",
             font_weight_inactive = "bold",
-            
+
             gradients = true,
             font_size = 14,
             height = 24,

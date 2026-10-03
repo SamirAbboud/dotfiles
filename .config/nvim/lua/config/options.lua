@@ -58,27 +58,53 @@ vim.g.netrw_winsize = 25                -- Set window width when splitting
 vim.g.editorconfig = true
 
 -- Code Folding
-vim.opt.foldlevel = 99        -- Keep all folds expanded when opening a file
-vim.opt.foldlevelstart = 99   -- Start with expanded folds
-vim.opt.foldenable = true     -- Enable folding engine
+vim.opt.foldlevel = 99        -- Start with all folds open when opening a file
+vim.opt.foldlevelstart = 99   -- Ensure initial load opens all folds
+vim.opt.foldenable = true     -- Allow manual folding
 
-vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
-  group = vim.api.nvim_create_augroup("TreesitterFolding", { clear = true }),
-  callback = function()
-    -- Check if Treesitter is attached to this buffer
-    local ok, parser = pcall(vim.treesitter.get_parser)
+local fold_group = vim.api.nvim_create_augroup("TreesitterFolding", { clear = true })
+
+-- Set up Treesitter folding when reading a buffer
+vim.api.nvim_create_autocmd({ "BufReadPost", "FileType" }, {
+  group = fold_group,
+  callback = function(args)
+    local ok, parser = pcall(vim.treesitter.get_parser, args.buf)
     if ok and parser then
-      vim.wo.foldmethod = "expr"
-      vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      vim.opt_local.foldmethod = "expr"
+      vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
     else
-      vim.wo.foldmethod = "indent" -- Fallback if Treesitter isn't running
+      vim.opt_local.foldmethod = "indent"
     end
-    vim.wo.foldlevel = 99
-    vim.wo.foldenable = true
   end,
 })
 
--- FOLD LOOK & FEEL (Clean foldtext representation)
+-- Prevent auto-folding during typing/pasting:
+-- 1. Switch to 'manual' foldmethod when entering insert mode so typing/pasting doesn't recalculate folds.
+vim.api.nvim_create_autocmd("InsertEnter", {
+  group = fold_group,
+  callback = function()
+    vim.opt_local.foldmethod = "manual"
+    vim.cmd("silent! mkview 1")
+  end,
+})
+
+-- 2. Restore 'expr' foldmethod on leaving insert mode without closing new folds.
+vim.api.nvim_create_autocmd("InsertLeave", {
+  group = fold_group,
+  callback = function(args)
+    local ok, parser = pcall(vim.treesitter.get_parser, args.buf)
+    if ok and parser then
+      vim.opt_local.foldmethod = "expr"
+      vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    else
+      vim.opt_local.foldmethod = "indent"
+    end
+    -- Restore saved manual fold view (keeps previously folded blocks closed)
+    vim.cmd("silent! loadview 1")
+  end,
+})
+
+-- FOLD LOOK & FEEL
 function _G.CustomFoldText()
   local line = vim.fn.getline(vim.v.foldstart)
   local line_count = vim.v.foldend - vim.v.foldstart + 1
@@ -87,3 +113,4 @@ end
 
 vim.opt.foldtext = "v:lua.CustomFoldText()"
 vim.opt.fillchars:append({ fold = " " })
+
