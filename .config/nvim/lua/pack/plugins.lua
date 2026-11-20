@@ -44,7 +44,7 @@ return {
   { repo = "whatyouhide/vim-textobj-xmlattr", disabled = true },
 
   -- AI code completion (ghost text)
-  { repo = "supermaven-inc/supermaven-nvim", spec = "pack.specs.supermaven" },
+  { repo = "zbirenbaum/copilot.lua", spec = "pack.specs.copilot" },
 
   -- Theme Repositories
   { repo = "tiagovla/tokyodark.nvim" },
