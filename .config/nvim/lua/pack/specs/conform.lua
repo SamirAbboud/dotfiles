@@ -16,7 +16,7 @@ conform.setup({
     cpp = { "clang-format" }, -- C++
 
     -- HTML, CSS, JSON Formatters
-    html = { "prettierd", "prettier", stop_after_first = true },
+    html = { "html_beautify" },
     css = { "prettierd", "prettier", stop_after_first = true },
     scss = { "prettierd", "prettier", stop_after_first = true },
     json = { "prettierd", "prettier", stop_after_first = true },
@@ -31,8 +31,9 @@ conform.setup({
 
     -- Template Engines
     blade = { "blade-formatter" },
-    liquid = { "prettierd", "prettier", stop_after_first = true },
-    twig = { "prettierd", "prettier", stop_after_first = true },
+    ejs = { "html_beautify" },
+    liquid = { "djlint" },
+    twig = { "djlint" },
 
     -- YAML and Markdown
     yaml = { "prettierd", "prettier", stop_after_first = true },
@@ -52,6 +53,22 @@ conform.setup({
     shfmt = {
       -- Customize shfmt flags: -i 2 (indent 2 spaces), -ci (switch case indent), -sr (space after redirect)
       prepend_args = { "-i", "2", "-ci", "-sr" },
+    },
+    html_beautify = {
+      command = "html-beautify",
+      args = { "-f", "-", "-s", "2", "--templating", "erb" },
+      stdin = true,
+    },
+    djlint = {
+      args = {
+        "--reformat",
+        "--indent", "2",
+        "--profile", "jinja",
+        "--preserve-blank-lines",
+        "--max-blank-lines", "1",
+        "--max-line-length", "80",
+        "-",
+      },
     },
   },
   -- Disable automatic formatting on save

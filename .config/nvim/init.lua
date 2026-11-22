@@ -1,4 +1,5 @@
 require("config.options")
+require("config.filetypes")
 require("config.keymaps")
 require("utils.terminal")
 require("lsp").setup()
